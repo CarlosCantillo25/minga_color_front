@@ -2,8 +2,8 @@ import Arrow from "./Arrow"
 
 export default function Carousel() {
   
-  let icon_left = "M11.25 91-3 3m0 013 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-  let icon_right = "M12.75 1513-3m0 01-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+  let icon_left = "M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+  let icon_right = "M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
   
   return (
     <div className='max-md:hidden md:mt-52 lg:mt-32 w-[98%] h-[245px] rounded-[6px] bg-gradient-to-b from-orange-600 to-orange-400 flex justify-around gap-[15px] items-center'>

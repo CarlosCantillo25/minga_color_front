@@ -13,8 +13,7 @@ function OpenMenu() {
 
   return (
     <div>
-      <button onClick={toggleMenu}><img className='h-11 lg:h-20 mx-3 mt-4' src="/public/Menu.png" alt="Menu" />
-</button>
+      <button onClick={toggleMenu}><img className='h-11 lg:h-20 mx-3 mt-4' src="/public/Menu.png" alt="Menu" /></button>
       {Display && (
         <div className='flex flex-col fixed h-[400px] w-[250px] ml-5 mt-[-5] bg-gradient-to-b from-orange-600 to-orange-400 text-white'>
             <div  className='flex justify-around'>

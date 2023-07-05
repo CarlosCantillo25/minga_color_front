@@ -1,10 +1,9 @@
 import Hero from "../components/Hero"
 import Carousel from "../components/Carousel"
 
-export default function index() {
+export default function Index() {
   return (
-    <main  className='flex h-[70vh] md:h-[74vh] md:ml-6 lg:mt-10 lg:ml-0 flex-col max-md:justify-center  lg:w-[90vw]'>
-     
+    <main  className='w-full lg:h-[100vh] flex flex-col align-center ontent-center justify-center'>    
       <Hero/>
       <Carousel/>
     </main>

@@ -20,6 +20,7 @@ export default function Carousel() {
   let icon_right = "M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
   
   return (
+
     <div className=" flex items-center justify-center ">
         <div className='flex items-center justify-evenly rounded-lg  md:mt-24 mt-10  lg:mt-16 hidden ml-[-2] md:flex md:h-56 md:w-[90%] bg-gradient-to-b from-orange-600 to-orange-400  lg:justify-around justify-around gap-[10px] lg:gap-14 '>
 

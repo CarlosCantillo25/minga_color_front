@@ -22,7 +22,7 @@ export default function Carousel() {
   return (
 
     <div className=" flex items-center justify-center ">
-        <div className='flex items-center justify-evenly rounded-lg  md:mt-24 mt-10  lg:mt-16 hidden ml-[-2] md:flex md:h-56 md:w-[90%] bg-gradient-to-b from-orange-600 to-orange-400  lg:justify-around justify-around gap-[10px] lg:gap-14 '>
+        <div className='flex items-center justify-evenly rounded-lg  md:mt-24 mt-10  lg:mt-16 hidden ml-[-2] md:flex md:h-56 md:w-[90%] bg-gradient-to-b from-orange-600 to-orange-400  lg:justify-around justify-around gap-[15px] lg:gap-24 '>
 
 <button><Arrow icon={icon_left} onClick={prev}/></button>
    

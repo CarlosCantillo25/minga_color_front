@@ -32,21 +32,18 @@ export default function NavBar() {
   return (
     <nav className="w-full text-white absolute flex flex-col items-center justify-around">
       <div className="flex w-[90%] justify-between items-center p-6">
-        <img src="/Menu.svg" onClick={() => setDisplay(!display)} />
+        <img src="./Menu.svg" onClick={() => setDisplay(!display)} />
         {display && (
           <div className="drawer sm:flex text-center sm:text-start min-w-[100%] sm:min-w-[410px] h-[100vh] flex-col sm:items-start gap-[147px] p-6 bg-gradient-to-b from-orange-600 to-orange-500 fixed top-0 left-0 shadow-2xl">
             <div className="flex h-[525px] flex-col items-center sm:items-start gap-8 self-stretch">
               <div className="flex w-full justify-end">
                 <img
-                  src="/filled.png"
+                  src="./filled.png"
                   onClick={() => setDisplay(!display)}
                   className="sm:hidden flex justify-end ms-[20%] h-[24px]"
                 />
-                <img
-                  src="/filled.png"
-                  onClick={() => setDisplay(!display)}
-                  className="hidden sm:block ms-[20%] w-[24px] h-[24px] cursor-pointer"
-                />
+                
+                
               </div>
               {isLoggedIn() ? (
                 <div className="flex flex-row items-center text-center lg:justify-between sm:w-[400px] w-[250px]">
@@ -59,6 +56,11 @@ export default function NavBar() {
                     onClick={() => setDisplay(!display)}
                     className="hidden sm:block ms-[20%] w-[24px] h-[24px]"
                   />
+                  <img
+                  src="./filled.png"
+                  onClick={() => setDisplay(!display)}
+                  className="sm:hidden flex justify-end ms-[20%] h-[24px]"
+                />
                 </div>
               ) : (
                 <Anchor to={'/signin'} className="p-3 hover:bg-white hover:text-orange-600 rounded-md w-[300px]">
@@ -84,7 +86,7 @@ export default function NavBar() {
             </div>
           </div>
         )}
-        <img src="/logoDos.png" className="hidden md:block w-[193px] h-[65px] shrink-0" />
+        <img src="/LogoDos.png" className="hidden md:block w-[193px] h-[65px] shrink-0" />
         <img src="/logoMovile.png" className="md:hidden w-[35px] h-[35px] shrink-0" />
       </div>
     </nav>

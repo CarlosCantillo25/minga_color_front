@@ -1,15 +1,18 @@
 import React from 'react'
 import { Navigate} from 'react-router-dom'
 import Register from "../pages/Register"
+import { LS } from '../utils/localStorageUtil'
 
-const ProtectedRoute = ()=>{
-   let user = false
-    if (user) {
+const ProtectedRoute = () => {
 
-        return <Navigate to={"/NotAllow"}/>
+   let token = LS.get('token')
+    
+    if(token){
+
+        return <Navigate to={'/NotAllow'} />
+
     }
-    return !user && <Register/>
+    return !token && <Register />
 }
 
 export default ProtectedRoute
-

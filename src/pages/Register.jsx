@@ -1,8 +1,8 @@
-import { useRef } from "react";
-import { api, apiUrl, endpoints } from "../utils/api.js"
+import { useRef } from "react"
+import { apiUrl, endpoints } from "../utils/api.js"
 import { Link as Anchor , useNavigate } from "react-router-dom"
+import axios from "axios"
 import Swal from "sweetalert2"
-
 
 export default function Register() {
 
@@ -11,6 +11,14 @@ export default function Register() {
   let email = useRef("")
   let photo = useRef("")
   let password = useRef("")
+
+  function alertSoon(){
+    Swal.fire({
+      text: 'We are having problems, this option is available soon!',
+      width: 600,
+      padding: '3em'
+    })
+  }
 
   async function handleFormSubmit(event){
     
@@ -22,30 +30,28 @@ export default function Register() {
       password: password.current.value
     }
     console.log(data)
-
-    try{
-      let user = await api.post(apiUrl + endpoints.register, data)
-      console.log(user)
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'New user creation successful',
-        showConfirmButton: false,
-        timer: 1500
+    
+      axios.post(apiUrl + endpoints.register, data)
+      .then(res => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'New user creation successful',
+          showConfirmButton: false,
+          timer: 1500
       })
       navigate('/signin')
-    }
-    catch (error){
+      })
+      .catch(error => {
+      const err = error.response.data.messages
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Something went wrong!',
+        text: err || 'This email is already registered'
       })
-      console.log(error.message)
-    }
-
-     
+    })
   }
+
     return (
       <>
         <div className="flex w-full h-[100vh] items-center justify-center">
@@ -78,7 +84,7 @@ export default function Register() {
                 </div>
                 <div className="w-[70vw] md:w-[30vw] h-12 shrink-0 border rounded-[10px] border-solid border-[#1F1F1F] flex justify-center items-center">
                   <img src="/google.png" className="w-6 h-6 shrink-0" />
-                  <p className="ms-2 text-[#1F1F1F] text-center text-sm not-italic font-medium leading-[normal] tracking-[0.7px]">Sign in with Google</p>
+                  <Anchor onClick={alertSoon} className="ms-2 text-[#1F1F1F] text-center text-sm not-italic font-medium leading-[normal] tracking-[0.7px]">Sign in with Google</Anchor>
                 </div>
                 <p className="text-[#1F1F1F] text-sm not-italic font-medium leading-[normal] tracking-[0.7px]">Already have an account? <Anchor to={'/signin'} className="text-[color:var(--primary-two-design,#F97316)]">Log in</Anchor></p>
                 <p className="text-[#1F1F1F] text-sm not-italic font-medium leading-[normal] tracking-[0.7px]">Go back to <Anchor to={'/'} className="text-[color:var(--primary-two-design,#F97316)]">home page</Anchor></p>

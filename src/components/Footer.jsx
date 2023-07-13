@@ -1,9 +1,12 @@
 import React from 'react'
 import {Link as Anchor} from 'react-router-dom'
+import { LS } from '../utils/localStorageUtil'
 
 export default function Footer() {
+  const isLoggedIn = () => LS.get('token')
+
   return (
-    <footer className="h-[5vh] bg-white w-full">
+    <footer className="h-[5vh] bg-white  w-full">
     <div className="lg:hidden flex justify-around items-center mt-1">
       <img src="/facebook-black.svg" alt="Facebook Social" className="w-[35px]" />
       <img src="/twitter-black.svg" alt="Twitter Social" className="w-[35px]" />
@@ -11,13 +14,13 @@ export default function Footer() {
       <img src="/youtube-black.svg" alt="Youtube Social" className="w-[35px]" />
     </div>
     <div className="hidden lg:flex flex-col w-full items-center justify-between">
-      <img src="/footer.png" className="h-[200px] w-full rounded-b-[50%] m-10" />
+      <img src="/footer.png" className="h-[200px] w-full rounded-b-[50%] " />
       <div className="flex flex-row justify-around items-center w-full p-5">
-        <div className="flex flex-row gap-10 font-medium text-lg">
+        <div className="flex flex-row gap-10 font-medium text-lg text-black">
         <Anchor to={'/'}> Home </Anchor>
-        <Anchor to={''}> Mangas </Anchor>
+        <Anchor to={isLoggedIn()?'/mangas':'/NotAllow'}> Mangas </Anchor>
         </div>
-        <img src="/logoDos.png" className="h-[70px]" />
+        <img src="/LogoDos.png" className="h-[70px]" />
         <div className="flex flex-col">
         <div className="flex justify-around items-center mt-1">
         <Anchor to={'https://www.facebook.com/'}> <img src="/facebook-black.svg" alt="Facebook Social" className="w-[30px]" /> </Anchor>

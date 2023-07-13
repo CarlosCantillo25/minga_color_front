@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 export default function Main() {
     //la propiedad children contiene el contenido que Main tiene como hijo
   return (
-    <div className='bg-[url("/public/Background2.png")] max-sm:bg-[url("/Background1.png")] flex flex-col  items-center text-white w-full h-screen lg:h-[62vh] mx-auto   md:h-96   bg-center bg-cover'>
+    <div className='bg-[url("/public/Background1.png")] max-sm:bg-[url("/Background2.png")] flex flex-col  items-center text-white w-full h-screen lg:h-[62vh] mx-auto   md:h-96   bg-center bg-cover'>
         <NavBar/> 
             <Outlet/>
         <Footer/>

@@ -3,7 +3,7 @@ import Carousel from "../components/Carousel"
 
 export default function Index() {
   return (
-    <main  className='w-full lg:h-[100vh] flex flex-col align-center ontent-center justify-center'>    
+    <main  className='w-full  lg:h-[100vh] flex flex-col align-center content-center justify-center'>    
       <Hero/>
       <Carousel/>
     </main>

@@ -7,6 +7,8 @@ import Welcome from "../pages/NotAllow"
 import ProtectedRoute from "./ProtectedRoute"
 import Mangas from "../pages/Mangas";
 import FormManga from "../pages/createMangas";
+import ProtectedSignIn from "./ProtectedSignIn"
+
 
 
 const router = createBrowserRouter([
@@ -18,6 +20,10 @@ const router = createBrowserRouter([
                 path:'/',
                 element: <Index/>
             },
+            {
+                path: '/mangas',
+                element: <Mangas/>
+            }
         ]
     },
     {
@@ -30,15 +36,15 @@ const router = createBrowserRouter([
     },
     {
         path:'/signin',
-        element: <SignIn/>
+        element: (
+        <ProtectedSignIn>
+        <SignIn/>
+        </ProtectedSignIn>
+        )
     },
     {
         path:'/NotAllow',
         element: <Welcome />
-    },
-    {
-        path: '/mangas',
-        element: <Mangas/>
     },
     {
         path:'/form-manga',

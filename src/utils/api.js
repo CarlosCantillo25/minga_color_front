@@ -7,9 +7,11 @@ export const endpoints = {
     signintoken: "auth/signintoken",
     register: "auth/register",
     signout: "auth/signout",
+
     read_mangas: "mangas",
     read_categories: "categories",
     chapters: "chapters",
     fetchAuthorsAdmin: "authors/admin",
     changeUserRoleToAuthor: "auth/role/author/:id",
 };
+

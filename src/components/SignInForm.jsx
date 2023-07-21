@@ -1,3 +1,4 @@
+
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser, setPhoto } from '../store/actions/auth.js';
@@ -20,6 +21,7 @@ export default function SigninForm() {
   const inputEmail = useRef('');
   const inputPassword = useRef('');
 
+
   const signin = async (event) => {
     event.preventDefault();
     const data = {
@@ -31,13 +33,16 @@ export default function SigninForm() {
       const response = await api.post(apiUrl + endpoints.signin, data);
       console.log(response);
       if (response.data.success) {
+
         Swal.fire({
           position: 'center',
           icon: 'success',
           title: 'User signed in!',
           showConfirmButton: false,
+
           timer: 1500,
         });
+
 
         const { user, photo, token } = response.data.response;
 
@@ -45,24 +50,31 @@ export default function SigninForm() {
         dispatch(setUser(user));
         dispatch(setPhoto(photo));
 
+
         navigate('/');
+
       } else {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
           text: 'Authentication failed!',
+
         });
+
       }
     } catch (error) {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'Authentication failed!',
+
       });
+
     }
   };
 
   return (
+
     <div className="flex flex-wrap flex-col justify-center items-center w-[100%] lg:w-[50%]">
       <p className="text-[#1F1F1F] text-center text-[32px] not-italic font-semibold leading-[normal] tracking-[1.6px]">
         Welcome <span className="text-orange-600">back!</span>
@@ -70,6 +82,7 @@ export default function SigninForm() {
       <p className="w-[80%] md:w-[50%] text-[rgba(31,31,31,0.75)] text-center text-xs not-italic font-semibold leading-[normal] tracking-[0.6px] mt-3">
         Discover manga, manhua and manhwa, track your progress, have fun, read manga.
       </p>
+
       <form onSubmit={signin} className="w-full">
         <div className="w-full mt-8 mr-0 mb-0 ml-0 space-y-8 flex flex-col items-center">
           <div>
@@ -111,6 +124,7 @@ export default function SigninForm() {
             </a>
           </button>
           <button className="w-[70vw] md:w-[30vw] h-12 shrink-0 border rounded-[10px] border-solid border-[#1F1F1F] flex justify-center items-center">
+
             <img src="/google.png" className="w-6 h-6 shrink-0" alt="Google" />
             <Anchor onClick={alertSoon} className="ms-2 text-[#1F1F1F] text-center text-sm not-italic font-medium leading-[normal] tracking-[0.7px]">
               Sign in with Google
@@ -122,6 +136,7 @@ export default function SigninForm() {
           <p className="text-[#1F1F1F] text-sm not-italic font-medium leading-[normal] tracking-[0.7px]">
             Go back to <Anchor to={'/'} className="text-[color:var(--primary-two-design,#F97316)]">home page</Anchor>
           </p>
+
         </div>
       </form>
     </div>

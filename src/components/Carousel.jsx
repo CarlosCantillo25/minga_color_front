@@ -4,6 +4,7 @@ import Arrow from './Arrow'
 
 export default function Carousel() {
 
+
     const[categories, setCategories] = useState([])
 
     useEffect(() => {
@@ -38,3 +39,4 @@ export default function Carousel() {
     </div>
   )
 }
+

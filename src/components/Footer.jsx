@@ -3,10 +3,12 @@ import {Link as Anchor} from 'react-router-dom'
 import { LS } from '../utils/localStorageUtil'
 
 export default function Footer() {
+
   const isLoggedIn =  LS.get('token')
 
   return (
     <footer className="h-[5vh] bg-white mt-25 w-full">
+
     <div className="lg:hidden flex justify-around items-center mt-1">
       <img src="/facebook-black.svg" alt="Facebook Social" className="w-[35px]" />
       <img src="/twitter-black.svg" alt="Twitter Social" className="w-[35px]" />
@@ -18,7 +20,9 @@ export default function Footer() {
       <div className="flex flex-row justify-around items-center w-full p-5">
         <div className="flex flex-row gap-10 font-medium text-lg text-black">
         <Anchor to={'/'}> Home </Anchor>
+
         <Anchor to={'/mangas'}> Mangas </Anchor>
+
         </div>
         <img src="/LogoDos.png" className="h-[70px]" />
         <div className="flex flex-col">

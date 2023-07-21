@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { api, apiUrl, endpoints } from "../utils/api";
@@ -12,6 +13,7 @@ import { LS } from '../utils/localStorageUtil';
 
 let token = LS.get('token')
 
+
 const Mangas = () => {
   const dispatch = useDispatch();
   const { filters, categories, mangas, pagination } = useSelector(
@@ -23,8 +25,10 @@ const Mangas = () => {
 
   const getMangas = async () => {
     try {
+
       const { data } = await api.get(apiUrl + endpoints.read_mangas+ `?title=${title}&category=${categoriesSelected}&page=${page}`, {
         headers: { Authorization: `Bearer ${token}` }},);
+
 
       dispatch(setMangas(data.mangas));
       dispatch(setPagination(data.pagination));
@@ -35,9 +39,11 @@ const Mangas = () => {
 
   const getCategories = async () => {
     try {
+
       const { data } = await api.get(apiUrl + endpoints.read_categories,{
         headers: { Authorization: `Bearer ${token}` }});
       dispatch(setCategories(data.categories));
+
     } catch (error) {
       console.log(error);
     }
@@ -90,6 +96,7 @@ const Mangas = () => {
   };
 
   return (
+
     <div className="flex  flex-col h-[400vh] w-screen items-center justify-center">
       <div className="flex flex-wrap gap-[70px] bg-[url('/mangas-bg.png')] bg-no-repeat bg-top bg-cover h-[40vh] justify-center items-center flex-col w-[100%]">
         <h1 className="text-white flex-wrap text-[30px] lg:text-[60px] font-semibold">Mangas</h1>
@@ -168,8 +175,11 @@ const Mangas = () => {
           Next
         </button>
       </div>
+
     </div>
   );
 };
 
+
 export default Mangas;
+

@@ -4,6 +4,7 @@ import SignIn from '../pages/Signin'
 import { LS } from '../utils/localStorageUtil'
 
 const ProtectedSignIn = () => {
+
     const token = LS.get('token');
   
     const isLoggedIn = () => {
@@ -16,5 +17,6 @@ const ProtectedSignIn = () => {
   
     return <SignIn />;
   };
+
 
 export default ProtectedSignIn

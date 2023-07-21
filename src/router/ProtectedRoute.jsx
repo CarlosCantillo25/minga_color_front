@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux'; // Importa el hook useSelector
@@ -96,3 +97,4 @@ const ProtectedAdminPanel = () => {
 
 
 export { ProtectedRoute, ProtectedRouteMangas, ProtectedRouteMangaDetail, ProtectedRouteNewManga, ProtectedAdminPanel,ProtectedRouteNewRole };
+

@@ -11,7 +11,6 @@ import { LS } from '../utils/localStorageUtil.js';
 function NavBar() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user);
-
   const photo = useSelector((state) => state.auth.photo);
 
   const [display, setDisplay] = useState(false);
@@ -82,6 +81,27 @@ useEffect(() => {
     if (!user) fetchUserData();
   }, []);
 
+    const fetchUserData = async () => {
+      try {
+        const response = await api.get(apiUrl + endpoints.signintoken, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        console.log(response)
+        const { user, photo } = response.data.response;
+
+        dispatch(setUser(user));
+        dispatch(setPhoto(photo));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+
+  useEffect(() => {
+
+    if (!user) fetchUserData();
+  }, []);
+
   return (
     <nav className="w-full text-white absolute flex flex-col items-center justify-around">
       <div className="flex w-[90%] justify-between items-center p-6">
@@ -95,7 +115,6 @@ useEffect(() => {
 
                 <div className="flex flex-row items-center text-center lg:justify-between sm:w-[400px] w-full">
                   <img src={photo} className="w-[35px] sm:w-[50px] mb-2 sm:m-0 rounded-full" alt="User" />
-
                   <div className="flex flex-col ms-3">
                     <p className="text-[14px] sm:text-[16px]">{user}</p>
                   </div>

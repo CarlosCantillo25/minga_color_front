@@ -16,6 +16,7 @@ import UnderConstruction from "../pages/UnderConstruction";
 import Chapter from "../pages/Chapter";
 
 
+import Donate from "../components/Donate";
 
 
 
@@ -86,6 +87,12 @@ const router = createBrowserRouter([
                 path: "/adminPanel",
                 element: <AdminPanel/>
             },
+
+            {
+                path:"/donate",
+                element: <Donate/>
+            }
+
 
         ],
         

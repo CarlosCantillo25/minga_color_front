@@ -13,5 +13,6 @@ export const endpoints = {
     chapters: "chapters",
     fetchAuthorsAdmin: "authors/admin",
     changeUserRoleToAuthor: "auth/role/author/:id",
+
 };
 

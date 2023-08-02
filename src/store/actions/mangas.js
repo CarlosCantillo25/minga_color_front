@@ -28,5 +28,6 @@ export const setPagination = createAction("mangas/setPagination", (pagination) =
         payload: pagination,
     }
 }
+
 );
 

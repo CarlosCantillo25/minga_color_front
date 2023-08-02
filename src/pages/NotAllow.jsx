@@ -7,11 +7,9 @@ export default function Welcome() {
 
   const isLoggedIn = LS.get('token') 
 
-
     return (
       <>
         <NavBar />
-
         <div className ='min-h-screen text-white bg-cover w-[100vw] bg-no-repeat bg-[url("/background1.png")] flex flex-col justify-center items-center'>
 
                 <div className="items-center gap-[25px] inline-flex flex-col justify-center md:p-1">

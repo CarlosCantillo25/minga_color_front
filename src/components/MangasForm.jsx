@@ -5,6 +5,8 @@ import Swal from "sweetalert2";
 import { LS } from "../utils/localStorageUtil";
 
 
+
+
 export default function MangaForm() {
   const [selectedOption, setSelectedOption] = useState("Select category");
   const [categories, setCategories] = useState([]);

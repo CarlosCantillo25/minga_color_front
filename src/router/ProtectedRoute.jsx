@@ -21,6 +21,7 @@ const ProtectedRoute = () => {
     return <Navigate to={'/NotAllow'} />;
   }
 
+
   return <Register />;
 };
 const ProtectedRouteNewRole = () => {
@@ -97,4 +98,3 @@ const ProtectedAdminPanel = () => {
 
 
 export { ProtectedRoute, ProtectedRouteMangas, ProtectedRouteMangaDetail, ProtectedRouteNewManga, ProtectedAdminPanel,ProtectedRouteNewRole };
-

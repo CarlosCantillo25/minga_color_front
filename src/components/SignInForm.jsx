@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser, setPhoto } from '../store/actions/auth.js';
@@ -7,6 +6,8 @@ import Swal from 'sweetalert2';
 import { Link as Anchor, useNavigate } from 'react-router-dom';
 import { LS } from '../utils/localStorageUtil.js';
 
+
+
 function alertSoon() {
   Swal.fire({
     text: 'We are having problems, this option is available soon!',
@@ -14,6 +15,7 @@ function alertSoon() {
     padding: '3em',
   });
 }
+
 
 export default function SigninForm() {
   const dispatch = useDispatch();

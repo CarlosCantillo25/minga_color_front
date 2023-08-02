@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux'; // Importa el hook useSelector
@@ -19,6 +20,7 @@ const ProtectedRoute = () => {
   if (isLoggedIn()) {
     return <Navigate to={'/NotAllow'} />;
   }
+
 
   return <Register />;
 };

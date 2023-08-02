@@ -1,5 +1,6 @@
 import { createAction } from "@reduxjs/toolkit";
 
+
 export const setFilters = createAction("mangas/setFilters", (filters) => {
     return{
         payload: filters,
@@ -27,4 +28,6 @@ export const setPagination = createAction("mangas/setPagination", (pagination) =
         payload: pagination,
     }
 }
+
 );
+

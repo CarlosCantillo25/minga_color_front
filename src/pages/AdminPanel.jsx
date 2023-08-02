@@ -77,7 +77,7 @@ const AdminPanel = () => {
                     <td>--/--/----{author?.date}</td>
                     <td>{author?.city}</td>
                     <td>
-                      
+
                        <ToggleSwitch initialState={author?.active} onclick={() => handleSwitchChange(author.user_id, 'author')}/>
                     </td>
                   </tr>
@@ -102,7 +102,7 @@ const AdminPanel = () => {
                     <td>--/--/----{author?.date}</td>
                     <td>{author?.city}</td>
                     <td>
-                    
+
                       <ToggleSwitch initialState={author?.active} onclick={() => handleSwitchChange(author.user_id, 'author')}/>
 
                     </td>

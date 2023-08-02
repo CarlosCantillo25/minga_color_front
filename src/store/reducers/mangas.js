@@ -4,6 +4,7 @@ import {
   setCategories,
   setMangas,
   setPagination,
+
 } from "../actions/mangas.js";
 
 const initialState = {
@@ -34,6 +35,7 @@ const mangasReducer = createReducer(initialState, (builder) => {
     .addCase(setPagination, (state, action) => {
       state.pagination = action.payload;
     })
+
 });
 
 export default mangasReducer;

@@ -4,6 +4,7 @@ import Main from "../layouts/Main";
 import SignIn from '../pages/Signin'
 import Index from "../pages/Index";
 import Welcome from "../pages/NotAllow"
+
 import { ProtectedRoute, ProtectedRouteMangaDetail, ProtectedRouteMangas, ProtectedAdminPanel, ProtectedRouteNewRole} from "./ProtectedRoute"
 import ProtectedSignIn from "./ProtectedSignIn";
 import FormManga from "../pages/createMangas";
@@ -14,7 +15,9 @@ import AdminPanel from "../pages/AdminPanel";
 import UnderConstruction from "../pages/UnderConstruction";
 import Chapter from "../pages/Chapter";
 
+
 import Donate from "../components/Donate";
+
 
 
 
@@ -28,6 +31,7 @@ const router = createBrowserRouter([
                 element: <Index/>
             },
             {
+
                 path:'/mangas',
                 element: (
                     <ProtectedRouteMangas>
@@ -83,10 +87,12 @@ const router = createBrowserRouter([
                 path: "/adminPanel",
                 element: <AdminPanel/>
             },
+
             {
                 path:"/donate",
                 element: <Donate/>
             }
+
 
         ],
         
@@ -95,6 +101,7 @@ const router = createBrowserRouter([
         path: "/underConstruction",
         element: <UnderConstruction/>
     },
+
 ])
 
 export default router

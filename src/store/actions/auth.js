@@ -1,3 +1,4 @@
+
 // actions/auth.js
 
 export const setUser = (user) => {
@@ -13,3 +14,4 @@ export const setPhoto = (photo) => {
     payload: photo,
   };
 };
+

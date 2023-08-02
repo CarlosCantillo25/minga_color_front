@@ -77,14 +77,7 @@ const AdminPanel = () => {
                     <td>--/--/----{author?.date}</td>
                     <td>{author?.city}</td>
                     <td>
-                      {/* <button
-                        className={`${
-                          author?.active ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
-                        }`}
-                        onClick={() => handleSwitchChange(author.user_id, 'author')}
-                      >
-                        {author?.active ? 'Active' : 'Inactive'}
-                      </button> */}
+                      
                        <ToggleSwitch initialState={author?.active} onclick={() => handleSwitchChange(author.user_id, 'author')}/>
                     </td>
                   </tr>
@@ -109,14 +102,7 @@ const AdminPanel = () => {
                     <td>--/--/----{author?.date}</td>
                     <td>{author?.city}</td>
                     <td>
-                      {/* <button
-                        className={`${
-                          author?.active ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
-                        }`}
-                        onClick={() => handleSwitchChange(author.user_id, 'author')}
-                      >
-                        {author?.active ? 'Active' : 'Inactive'}
-                      </button> */}
+                    
                       <ToggleSwitch initialState={author?.active} onclick={() => handleSwitchChange(author.user_id, 'author')}/>
 
                     </td>

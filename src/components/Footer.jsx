@@ -28,7 +28,7 @@ export default function Footer() {
         <Anchor to={'https://vimeo.com/es/'}> <img src="/vimeo-black.svg" alt="Vimeo Social" className="w-[30px]" /> </Anchor>
         <Anchor to={'https://www.youtube.com/'}> <img src="/youtube-black.svg" alt="Youtube Social" className="w-[30px]" /> </Anchor>          
         </div>
-        <Anchor to={''} className= "bg-orange-600 text-white flex px-[50px] py-5 text-center text-xl font-medium leading-[95.187%] rounded-md mt-2"> Donate <img src="/heart.svg" className="ms-2"/> </Anchor>
+        <Anchor to={'/donate'} className= "bg-orange-600 text-white flex px-[50px] py-5 text-center text-xl font-medium leading-[95.187%] rounded-md mt-2"> Donate <img src="/heart.svg" className="ms-2"/> </Anchor>
         </div>
       </div>
       <img src="/line.png" className="w-[85%] h-[1px] bg-black mb-5" />

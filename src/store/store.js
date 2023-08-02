@@ -1,12 +1,18 @@
 import { configureStore } from "@reduxjs/toolkit";
-import mangasReducer from "./reducers/mangas";
-import authReducer from "./reducers/auth";
+
+import mangasReducer from "../store/reducers/mangas.js";
+import mangaReducer from "./reducers/manga.js";
+import authReducer from "./reducers/auth.js";
+import adminReducer from "./reducers/adminReducer.js";
 
 const store = configureStore({
-    reducer: {
-       mangas: mangasReducer,
-       auth : authReducer
-    }
-});
+  reducer: {
+    auth: authReducer,
+    mangas: mangasReducer,
+    manga: mangaReducer,
+    admin: adminReducer,
+  },
+})
 
-export default store
+export default store;
+

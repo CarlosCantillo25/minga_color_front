@@ -5,14 +5,18 @@ import { LS } from '../utils/localStorageUtil'
 
 const ProtectedSignIn = () => {
 
-    const token = LS.get('token')
-    
-    if(token){
-
-        return <Navigate to={'/NotAllow'} />
-
+    const token = LS.get('token');
+  
+    const isLoggedIn = () => {
+      return token
+    };
+  
+    if (isLoggedIn()) {
+      return <Navigate to={'/NotAllow'} />;
     }
-    return !token && <SignIn />
-}
+  
+    return <SignIn />;
+  };
+
 
 export default ProtectedSignIn

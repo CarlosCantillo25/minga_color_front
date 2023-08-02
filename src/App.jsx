@@ -6,7 +6,7 @@ function App() {
 
   return (
       <Main>
-        <Index/>
+        <SignIn/>
       </Main>
   )
 }

@@ -55,7 +55,7 @@ export default function Register() {
     return (
       <>
         <div className="flex w-full h-[100vh] items-center justify-center">
-          <div className="w-full md:w-[50%] h-[640px] shrink-0 flex flex-col justify-center items-center bg-white">
+          <div className="w-full md:w-[50%] h-[100vh] shrink-0 flex flex-col justify-center items-center bg-white">
           <p className="text-[#1F1F1F] text-center text-[32px] not-italic font-semibold leading-[normal] tracking-[1.6px]">Welcome!</p>
             <p className="w-[80%] md:w-[50%] text-[rgba(31,31,31,0.75)] text-center text-xs not-italic font-semibold leading-[normal] tracking-[0.6px] mt-3">Discover manga, manhua and manhwa, track your progress, have fun, read manga.</p>
             <form onSubmit={handleFormSubmit} method="POST" className="w-full">
@@ -68,12 +68,12 @@ export default function Register() {
                 <div>
                   <p className="bg-white pt-0 pr-2 pb-0 pl-2 mr-0 mb-0 ml-2 not-italic font-normal leading-[normal] tracking-[0.6px] text-xs text-[color:var(--primary-two-design,#F97316)]">Photo</p>
                   <input ref={photo} placeholder="Url" id="photo" name="photo" type="text" required className="border placeholder-gray-300 pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
-                      rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] h-12 shrink-0"/>
+                      rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] text-black h-12 shrink-0"/>
                 </div>
                 <div>
                   <p className="bg-white pt-0 pr-2 pb-0 pl-2 mr-0 mb-0 ml-2 not-italic font-normal leading-[normal] tracking-[0.6px] text-xs text-[color:var(--primary-two-design,#F97316)]">Password</p>
                   <input ref={password} placeholder="Password" id="password" name="password" type="password" required className="border placeholder-gray-300 pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
-                      rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] h-12 shrink-0"/>
+                      rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] text-black md:w-[30vw] h-12 shrink-0"/>
                 </div>
                 <div className="flex items-center justify-start w-[70vw] md:w-[30vw]">
                   <input type="checkbox" className="border rounded-[10px] border-solid border-[#1F1F1F]" />
@@ -91,7 +91,7 @@ export default function Register() {
               </div>
             </form>
           </div>
-          <div className="hidden md:flex md:w-1/2 xl:w-2/3 2xl:w-3/4 h-full bg-cover bg-[url('/fondoForm.png')]"></div>
+          <div className="hidden md:flex md:w-1/2 xl:w-2/3 2xl:w-100 h-full bg-cover bg-[url('/fondoForm.png')]"></div>
         </div>
       </>
     );

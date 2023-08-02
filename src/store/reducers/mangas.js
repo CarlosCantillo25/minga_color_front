@@ -4,8 +4,7 @@ import {
   setCategories,
   setMangas,
   setPagination,
-  captureText,
-  captureChecks,
+
 } from "../actions/mangas.js";
 
 const initialState = {
@@ -36,12 +35,7 @@ const mangasReducer = createReducer(initialState, (builder) => {
     .addCase(setPagination, (state, action) => {
       state.pagination = action.payload;
     })
-    .addCase(captureText, (state, action) => {
-      state.filters.title = action.payload;
-    })
-    .addCase(captureChecks, (state, action) => {
-      state.filters.categoriesSelected = action.payload;
-    });
+
 });
 
 export default mangasReducer;

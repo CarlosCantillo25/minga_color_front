@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
+import { LS } from "../utils/localStorageUtil";
+
+
 export default function MangaForm() {
   const [selectedOption, setSelectedOption] = useState("Select category");
   const [categories, setCategories] = useState([]);
@@ -21,7 +24,9 @@ export default function MangaForm() {
       author_id: "1",
     };
     
-    let token = localStorage.getItem("token");
+
+    let token = LS.get('token')
+
     let configs = {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -57,7 +62,9 @@ export default function MangaForm() {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/categories").then((res) => setCategories(res.data.response));
+
+    axios.get("http://localhost:8080/api/categories").then((res) => setCategories(res.data.categories));
+
   }, [reloadComponent]);
 
   useEffect(() => {
@@ -83,14 +90,18 @@ export default function MangaForm() {
                   required
                   value={mangaTitle}
                   onChange={(event) => setMangaTitle(event.target.value)}
-                  className="border placeholder-gray-400 pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] h-12 shrink-0"
+
+                  className="border text-black placeholder-gray-400 pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] h-12 shrink-0"
+
                 />
               </div>
               <div>
                 <select
                   value={selectedOption}
                   onChange={handleOptionChange}
-                  className="border placeholder-gray-400 pt-[12px] pr-4 pb-[11px] pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] h-12 shrink-0"
+
+                  className="border text-black placeholder-gray-400 pt-[12px] pr-4 pb-[11px] pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] h-12 shrink-0"
+
                 >
                   {categories.map((option) => (
                     <option key={option._id} value={option.name}>
@@ -108,7 +119,9 @@ export default function MangaForm() {
                   required
                   value={coverPhoto}
                   onChange={(event) => setCoverPhoto(event.target.value)}
-                  className="border placeholder-gray-400 pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] h-12 shrink-0"
+
+                  className="border text-black placeholder-gray-400 pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] h-12 shrink-0"
+
                 />
               </div>
               <div>
@@ -120,7 +133,9 @@ export default function MangaForm() {
                   required
                   value={mangaDescription}
                   onChange={(event) => setMangaDescription(event.target.value)}
-                  className="border placeholder-gray-400 pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] h-12 shrink-0"
+
+                  className="border text-black placeholder-gray-400 pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white rounded-[10px] border-solid border-[rgba(31,31,31,0.50)] w-[70vw] md:w-[30vw] h-12 shrink-0"
+
                 />
               </div>
 
@@ -135,4 +150,6 @@ export default function MangaForm() {
       </div>
     </>
   );
+
 }
+
